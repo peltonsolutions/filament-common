@@ -1,6 +1,6 @@
 {
-  "name": "peltonsolutions/filament-utilities",
-  "description": "A custom package for Filament that provides shared enhancements used throughout peltonsolutions packages.",
+  "name": "peltonsolutions/filament-common",
+  "description": "A custom package for Filament that provides common enhancements used throughout peltonsolutions packages.",
   "keywords": [
     "peltonsolutions",
     "laravel",
