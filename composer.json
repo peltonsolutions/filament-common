@@ -1,0 +1,55 @@
+{
+  "name": "peltonsolutions/filament-utilities",
+  "description": "A custom package for Filament that provides shared enhancements used throughout peltonsolutions packages.",
+  "keywords": [
+    "peltonsolutions",
+    "laravel",
+    "filament"
+  ],
+  "homepage": "https://github.com/peltonsolutions/filament-utilities",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nathan Pelton",
+      "email": "npelton@gmail.com",
+      "homepage": "https://www.nathanpelton.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "filament/filament": "^3.0.9"
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.33",
+    "pestphp/pest-plugin-livewire": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "PeltonSolutions\\FilamentCommon\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PeltonSolutions\\FilamentCommon\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "PeltonSolutions\\FilamentCommon\\FilamentCommonServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
