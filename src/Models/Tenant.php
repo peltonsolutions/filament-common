@@ -9,5 +9,5 @@ class Tenant extends Model
 	public $incrementing = false;
 	protected $primaryKey = 'uuid';
 	protected $keyType = 'string';
-
+	
 }
