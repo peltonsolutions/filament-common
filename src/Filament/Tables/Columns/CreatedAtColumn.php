@@ -12,7 +12,7 @@ class CreatedAtColumn extends TextColumn
 	public static function make(string $name = 'created_at'): static
 	{
 		return parent::make($name)
-					 ->label(__('pelton-solutions-common::fields.created_at'))
+					 ->label(trans('pelton-solutions-common::fields.created_at'))
 					 ->formatStateUsing(function ($state) {
 						 if ($state) {
 							 $date = Carbon::parse($state);
@@ -21,7 +21,7 @@ class CreatedAtColumn extends TextColumn
 								 $date->timezone($user->getTimezone());
 							 }
 							 Carbon::setLocale(App::getLocale());
-							 return $date->translatedFormat(__('date_formats.datetime'));
+							 return $date->translatedFormat(trans('date_formats.datetime'));
 						 }
 						 return '';
 					 })

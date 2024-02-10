@@ -2,7 +2,6 @@
 
 namespace PeltonSolutions\FilamentCommon\Filament\Forms\Components;
 
-use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
@@ -13,7 +12,7 @@ class UpdatedAtView extends TextInput
 	public static function make(string $name = 'updated_at'): static
 	{
 		return parent::make($name)
-					 ->label(__('pelton-solutions-common::fields.updated_at'))
+					 ->label(trans('pelton-solutions-common::fields.updated_at'))
 					 ->formatStateUsing(function ($state) {
 						 if ($state) {
 							 $date = Carbon::parse($state);
@@ -22,7 +21,7 @@ class UpdatedAtView extends TextInput
 								 $date->timezone($user->getTimezone());
 							 }
 							 Carbon::setLocale(App::getLocale());
-							 return $date->translatedFormat(__('pelton-solutions-common::date_formats.datetime'));
+							 return $date->translatedFormat(trans('pelton-solutions-common::date_formats.datetime'));
 						 }
 						 return '';
 					 })
