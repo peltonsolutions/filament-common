@@ -21,7 +21,7 @@ class DeletedAtColumn extends TextColumn
 								 $date->timezone($user->getTimezone());
 							 }
 							 Carbon::setLocale(App::getLocale());
-							 return $date->translatedFormat(trans('date_formats.datetime'));
+							 return $date->translatedFormat(trans('pelton-solutions-common::date_formats.datetime'));
 						 }
 						 return '';
 					 })
