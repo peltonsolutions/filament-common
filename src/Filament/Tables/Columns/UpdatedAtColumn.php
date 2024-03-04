@@ -9,9 +9,9 @@ use PeltonSolutions\FilamentCommon\Interfaces\HasTimezone;
 
 class UpdatedAtColumn extends TextColumn
 {
-	public static function make(string $name = 'updated_at'): static
+	public static function make(string $name = null): static
 	{
-		return parent::make($name)
+		return parent::make($name ?: 'updated_at')
 					 ->label(trans('pelton-solutions-common::fields.updated_at'))
 					 ->formatStateUsing(function ($state) {
 						 if ($state) {
