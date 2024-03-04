@@ -9,9 +9,9 @@ use PeltonSolutions\FilamentCommon\Interfaces\HasTimezone;
 
 class DeletedAtColumn extends TextColumn
 {
-	public static function make(string $name = 'deleted_at'): static
+	public static function make(string $name = null): static
 	{
-		return parent::make($name)
+		return parent::make($name ?: 'deleted_at')
 					 ->label(trans('pelton-solutions-common::fields.deleted_at'))
 					 ->formatStateUsing(function ($state) {
 						 if ($state) {
