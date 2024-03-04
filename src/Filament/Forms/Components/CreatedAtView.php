@@ -9,9 +9,9 @@ use PeltonSolutions\FilamentCommon\Interfaces\HasTimezone;
 
 class CreatedAtView extends TextInput
 {
-	public static function make(string $name = 'created_at'): static
+	public static function make(string $name = null): static
 	{
-		return parent::make($name)
+		return parent::make($name ?: 'created_at')
 					 ->label(trans('pelton-solutions-common::fields.created_at'))
 					 ->formatStateUsing(function ($state) {
 						 if ($state) {
