@@ -2,12 +2,13 @@
 
 namespace PeltonSolutions\FilamentCommon\Interfaces;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 interface HasTenant
 {
 
-	static public function whereTenantUuid(string $tenantUUID): \Illuminate\Database\Eloquent\Builder;
+	public static function whereTenantUuid(string $tenantUUID): Builder;
 
 	public function tenant(): BelongsTo;
 
