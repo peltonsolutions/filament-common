@@ -10,35 +10,35 @@ abstract class LinkedFieldView extends TextInput
 {
 	protected ?string $targetName = null;
 
-	public static function make(string $name): static
+	public static function make(?string $name = null): static
 	{
-		$static = app(static::class, ['name' => $name.'_view']);
+		$static = app(static::class, ['name' => $name . '_view']);
 		$static->configure();
 		$static->targetName = $name;
 		return $static->visibleOn('view')
-					  ->formatStateUsing(
-						  function ($state, $record, self $component) {
-							  if ($record && $component->targetName) {
-								  $state = $record->{$component->targetName};
-							  }
-							  $relatedRecord = $component->getRelatedRecord($state);
-							  if ($relatedRecord) {
-								  return $component->displayName($relatedRecord);
-							  }
-							  return $state ? 'Not Found' : '';
-						  }
-					  )
-					  ->suffixAction(
-						  function ($record, self $component) {
-							  if ($record && $component->targetName && ($state = $record->{$component->targetName})) {
-								  return Action::make('visit')
-											   ->icon('heroicon-o-eye')
-											   ->url(
-												   filled($state) ? $component->getRelateRecordURL($state) : null
-											   );
-							  }
-							  return null;
-						  });
+			->formatStateUsing(
+				function ($state, $record, self $component) {
+					if ($record && $component->targetName) {
+						$state = $record->{$component->targetName};
+					}
+					$relatedRecord = $component->getRelatedRecord($state);
+					if ($relatedRecord) {
+						return $component->displayName($relatedRecord);
+					}
+					return $state ? 'Not Found' : '';
+				}
+			)
+			->suffixAction(
+				function ($record, self $component) {
+					if ($record && $component->targetName && ($state = $record->{$component->targetName})) {
+						return Action::make('visit')
+							->icon('heroicon-o-eye')
+							->url(
+								filled($state) ? $component->getRelateRecordURL($state) : null
+							);
+					}
+					return null;
+				});
 	}
 
 	abstract protected function getRelatedRecord(string|int|null $id): ?Model;
