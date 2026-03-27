@@ -15,6 +15,7 @@ abstract class LinkedFieldView extends TextInput
 		$static = app(static::class, ['name' => $name . '_view']);
 		$static->configure();
 		$static->targetName = $name;
+
 		return $static->visibleOn('view')
 			->formatStateUsing(
 				function ($state, $record, self $component) {
@@ -25,6 +26,7 @@ abstract class LinkedFieldView extends TextInput
 					if ($relatedRecord) {
 						return $component->displayName($relatedRecord);
 					}
+
 					return $state ? 'Not Found' : '';
 				}
 			)
@@ -35,15 +37,19 @@ abstract class LinkedFieldView extends TextInput
 							->icon('heroicon-o-eye')
 							->url(
 								filled($state) ? $component->getRelateRecordURL($state) : null
-							);
+							)
+						;
 					}
+
 					return null;
-				});
+				}
+			)
+		;
 	}
 
-	abstract protected function getRelatedRecord(string|int|null $id): ?Model;
+	abstract protected function getRelatedRecord(int|string|null $id): ?Model;
 
 	abstract protected function displayName(Model $relatedRecord): string;
 
-	abstract protected function getRelateRecordURL(string|int|null $id): ?string;
+	abstract protected function getRelateRecordURL(int|string|null $id): ?string;
 }

@@ -21,10 +21,13 @@ class CreatedAtView extends TextInput
 						$date->timezone($user->getTimezone());
 					}
 					Carbon::setLocale(App::getLocale());
+
 					return $date->translatedFormat(trans('pelton-solutions-common::date_formats.datetime'));
 				}
+
 				return '';
 			})
-			->visibleOn('view');
+			->visibleOn('view')
+		;
 	}
 }

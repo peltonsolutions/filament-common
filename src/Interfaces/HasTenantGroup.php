@@ -10,5 +10,4 @@ interface HasTenantGroup
 	public static function whereTenantGroupUuid(string $tenantGroupUuid): Builder;
 
 	public function tenantGroup(): BelongsTo;
-
 }

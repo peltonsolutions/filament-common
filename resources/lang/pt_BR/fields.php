@@ -17,5 +17,5 @@ return [
 
 	'metric_as_of' => 'Métrica a partir de',
 
-	'status' => 'Status'
+	'status' => 'Status',
 ];

@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 interface HasTenants
 {
-
 	public static function whereTenantUuid(string $tenantUUID): Builder;
 
-	/*public function addToTenant(Tenant|Collection $tenant): void;*/
+	// public function addToTenant(Tenant|Collection $tenant): void;
 
 	public function tenants(): BelongsToMany;
 
-	/*public function removeFromTenant(Tenant|Collection $tenant): void;*/
+	// public function removeFromTenant(Tenant|Collection $tenant): void;
 
 }
