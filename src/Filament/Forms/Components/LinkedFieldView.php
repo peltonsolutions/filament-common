@@ -36,7 +36,7 @@ abstract class LinkedFieldView extends TextInput
 						return Action::make('visit')
 							->icon('heroicon-o-eye')
 							->url(
-								filled($state) ? $component->getRelateRecordURL($state) : null
+								filled($state) ? $component->getRelatedRecordURL($state) : null
 							)
 						;
 					}
@@ -51,5 +51,5 @@ abstract class LinkedFieldView extends TextInput
 
 	abstract protected function displayName(Model $relatedRecord): string;
 
-	abstract protected function getRelateRecordURL(int|string|null $id): ?string;
+	abstract protected function getRelatedRecordURL(int|string|null $id): ?string;
 }
