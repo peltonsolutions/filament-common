@@ -1,5 +1,3 @@
 <?php
 
-test('example', function () {
-	expect(true)->toBeTrue();
-});
+// Placeholder — real unit tests live in dedicated test files.
