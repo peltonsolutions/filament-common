@@ -11,7 +11,7 @@ class FilamentCommonServiceProvider extends ServiceProvider
 	/**
 	 * Bootstrap any application services.
 	 */
-	public function boot()
+	public function boot(): void
 	{
 		$this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'pelton-solutions-common');
 	}
