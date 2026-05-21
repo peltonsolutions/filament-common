@@ -2,7 +2,7 @@
 
 namespace PeltonSolutions\FilamentCommon\Filament\Forms\Components;
 
-use Filament\Forms\Components\Actions\Action;
+use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Model;
 
