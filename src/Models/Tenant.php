@@ -2,12 +2,12 @@
 
 namespace PeltonSolutions\FilamentCommon\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
 class Tenant extends Model
 {
-	public $incrementing = false;
-	protected $primaryKey = 'uuid';
-	protected $keyType = 'string';
+	use HasUuids;
 
+	protected $primaryKey = 'uuid';
 }
